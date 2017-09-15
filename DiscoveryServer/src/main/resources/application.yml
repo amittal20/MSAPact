@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: discovery-service
+    
+
+server:
+  port: 7500
+  
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://127.0.0.1:7500/eureka/
+    instance-info-replication-interval-seconds: 2 

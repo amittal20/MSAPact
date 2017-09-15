@@ -1,0 +1,25 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7500/eureka/
+  instance:
+    metadataMap:
+      cluster: MYCLUSTER
+    
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mysql
+    username: root
+    password: root
+ 
+server:
+  port: 7580   
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.niit: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file: /logs/item-info/logging.log

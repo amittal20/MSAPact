@@ -1,0 +1,26 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7500/eureka/
+
+spring:
+  application:
+    name: itemreview-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/mysql
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+server:
+  port: 7590
+  
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.niit: DEBUG
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file: /logs/item-review/logging.log

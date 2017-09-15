@@ -1,0 +1,25 @@
+server:
+  port: 7540
+
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7500/eureka/
+  instance:
+    metadataMap:
+      cluster: MYCLUSTER     
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.niit: INFO
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer.group-id: jsa-group
+
+        

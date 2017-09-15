@@ -1,0 +1,27 @@
+server:
+  port: 7520
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7500/eureka/
+  instance:
+    metadataMap:
+      cluster: MYCLUSTER     
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.niit: DEBUG
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+      
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: invoice
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+          
